@@ -10,11 +10,37 @@ using System.Windows.Forms;
 
 namespace photo_viewer
 {
-    public partial class Form1 : Form
+    public partial class FormMain : Form
     {
-        public Form1()
+        public FormMain(string[] args)
         {
             InitializeComponent();
+            if (args.Length >= 1)
+            {
+                string imagePath = args[0];
+                if (imagePath != null)
+                {
+                    if (!LoadImageFromPath(imagePath))
+                    {
+                        this.Close();
+                    }
+                }
+            }
+            //TODO: Load button.
+        }
+
+        private bool LoadImageFromPath(string path)
+        {
+            try
+            {
+                this.pictureBoxMain.Image = Image.FromFile(path);
+                return true;
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(this, e.Message, "Error loading image", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
         }
     }
 }

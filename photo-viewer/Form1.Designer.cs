@@ -1,6 +1,6 @@
 ﻿namespace photo_viewer
 {
-    partial class Form1
+    partial class FormMain
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.pictureBoxMain = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // pictureBoxMain
+            // 
+            this.pictureBoxMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxMain.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxMain.Name = "pictureBoxMain";
+            this.pictureBoxMain.Size = new System.Drawing.Size(974, 929);
+            this.pictureBoxMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxMain.TabIndex = 0;
+            this.pictureBoxMain.TabStop = false;
+            // 
+            // FormMain
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(974, 929);
+            this.Controls.Add(this.pictureBoxMain);
+            this.Name = "FormMain";
+            this.Text = "Photo Viewer";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.PictureBox pictureBoxMain;
     }
 }
 
